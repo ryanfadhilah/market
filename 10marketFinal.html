@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market versi 2</title>
+    <script src="./10marketFinal.js" defer></script>
+
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        form {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <h1 style="text-align:center">Market V.2.2</h1>
+
+    <form>
+
+        <!-- filter -->
+        <fieldset>
+            <legend>Filter</legend>
+            <p>Nama: <input type="text" name="txtFilter" id="nameFilter" placeholder="filter by name"
+                    oninput="fnFilterName()"></p>
+            <p>Price: <input type="text" name="txtFilter" id="min" placeholder="Min" onkeyup="fnFilterPrice()"> - <input
+                    type="text" name="txtFilter" id="max" placeholder="Max" onkeyup="fnFilterPrice()">
+            </p>
+            <p>Category: <select id="catFilter" onclick="fnFilterCategory()">
+                </select></p>
+            <p><input type="button" value="reset" onclick="fnResetFilter()"></p>
+        </fieldset>
+
+
+        <!-- input data -->
+        <fieldset>
+            <legend>Input Data</legend>
+            <table>
+                <td><input type="text" id="nameInput" placeholder="Nama"></td>
+                <td><input type="number" id="priceInput" placeholder="Price"></td>
+                <td>
+                    <select id="catInput">
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Stock" id="stockInput"></td>
+            </table>
+            <p><input type="button" value="input" onclick="fnInputData()"></p>
+        </fieldset>
+
+
+        <!-- render -->
+        <fieldset>
+            <legend>Data Table</legend>
+            <table>
+                <thead>
+                    <th>ID</th>
+                    <th>Category</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Buy</th>
+                    <th colspan="2">Action</th>
+
+                </thead>
+
+                <tbody id="render">
+
+                </tbody>
+
+            </table>
+        </fieldset>
+
+
+
+        <!-- payment -->
+        <fieldset>
+            <legend>Carts</legend>
+
+            <table>
+                <thead>
+                    <th>ID</th>
+                    <th>Category</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th colspan="2">Action</th>
+                </thead>
+
+                <tbody id="carts">
+
+                </tbody>
+            </table>
+            <p><input type="button" value="payment" name="" id="" onclick="fnPayment()"></p>
+
+        </fieldset>
+
+        payment
+        <fieldset>
+            <legend>Payment</legend>
+            <h3>Transaction Detail</h3>
+
+            <div id="payment">
+
+            </div>
+
+
+        </fieldset>
+
+
+    </form>
+
+
+    <div style="height: 500px;"></div>
+</body>
+
+</html>
